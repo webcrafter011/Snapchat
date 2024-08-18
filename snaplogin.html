@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapchat Log In</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .logo {
+            width: 120px; /* Adjust the width as needed */
+            height: auto;
+            margin: 0 auto 0px;
+            display: block;
+        }
+        .form-group {
+            text-align: left;
+        }
+        .form-control {
+            border-radius: 4px;
+        }
+        .btn-primary {
+            background-color: #fffc00;
+            border: none;
+            color: #000;
+        }
+        .btn-primary:hover {
+            background-color: #f0f0f0;
+        }
+        .alternative-actions {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .alternative-actions a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .alternative-actions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Snapchat Ghost Icon -->
+        <img src="snap.jpg" alt="Snapchat Ghost Icon" class="logo">
+        <h2>Log in to Snapchat</h2>
+        <form>
+            <div class="form-group">
+                <label for="usernameEmail">Username or Email</label>
+                <input type="text" class="form-control" id="usernameEmail" placeholder="Enter your username or email">
+            </div>
+           
+            <button type="submit" class="btn btn-primary btn-block">Log In</button>
+        </form>
+        <div class="alternative-actions">
+            <p><a href="#">Use phone number instead</a></p>
+            <p>New to Snapchat? <a href="snapsignup.html">Sign Up</a></p>
+        </div>
+    </div>
+    <script>
+        // Additional JavaScript can be added here if needed
+    </script>
+</body>
+</html>

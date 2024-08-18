@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapchat Sign Up</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .logo {
+            width: 120px; /* Adjust the width as needed */
+            height: auto;
+            margin: 0 auto 0px;
+            display: block;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left; /* Align label text to the left */
+        }
+        .form-control {
+            border-radius: 4px;
+        }
+        .btn-primary {
+            background-color: #fffc00;
+            border: none;
+            color: #000;
+        }
+        .btn-primary:hover {
+            background-color: #f0f0f0;
+        }
+        .privacy-text {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        .login-link {
+            display: block;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .login-link a {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body class="mt-5">
+    <div class="container">
+        <!-- Snapchat Logo -->
+        <img src="snap.jpg" alt="Snapchat Logo" class="logo">
+        <h2>Sign Up</h2>
+        <form>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="Input your first name">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Input your last name">
+            </div>
+            <div class="form-group">
+                <label for="username">User Name</label>
+                <input type="text" class="form-control" id="username" placeholder="Input your user name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Input your email address">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Input your password">
+                <input type="checkbox" id="showPassword"> <label for="showPassword">Show password</label>
+                <small class="form-text text-muted">Password must be at least 8 characters.</small>
+            </div>
+            <div class="form-group">
+                <label for="birthday">Birthday</label>
+                <div class="form-row">
+                    <div class="col">
+                        <select class="form-control" id="month">
+                            <option>Month</option>
+                            <option>January</option>
+                            <option>February</option>
+                            <!-- Add other months -->
+                        </select>
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" id="day" placeholder="Day" min="1" max="31">
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" id="year" placeholder="Year" min="1900" max="2100">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Sign Up & Accept</button>
+            <p class="privacy-text">By tapping Sign Up & Accept, you acknowledge that you have read the Privacy Policy and agree to the Terms of Service. Snapchatters can always capture or save your messages, such as by taking a screenshot or using a camera. Be mindful of what you Snap!</p>
+            <p class="login-link">Have an account? <a href="snaplogin.html">Log In</a></p>
+            <p class="login-link">Are you an advertiser? <a href="#">Click Here</a></p>
+        </form>
+    </div>
+    <script>
+        // Toggle password visibility
+        document.getElementById('showPassword').addEventListener('change', function() {
+            const passwordField = document.getElementById('password');
+            passwordField.type = this.checked ? 'text' : 'password';
+        });
+
+        // Validate the form before submission
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const month = document.getElementById('month').value;
+            const day = document.getElementById('day').value;
+            const year = document.getElementById('year').value;
+
+            if (!firstName || !lastName || !username || !email || !password || month === 'Month' || !day || !year) {
+                alert('Please fill out all fields correctly.');
+                event.preventDefault(); // Prevent form submission
+            } else if (password.length < 8) {
+                alert('Password must be at least 8 characters long.');
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
+</body>
+</html>
